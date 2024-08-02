@@ -1,0 +1,206 @@
+:root {
+  --orange: hsl(25, 97%, 53%);
+  --white: hsl(0, 0%, 100%);
+  --ltgrey: hsl(217, 12%, 63%);
+  --dkblue: hsl(213, 19%, 18%);
+  --star: hsl(216, 14%, 22%);
+  --vdkblue: hsl(216, 12%, 8%);
+}
+
+* {
+  box-sizing: border-box;
+  font-size: 15px;
+  padding: 10px;
+  line-height: 1.5;
+}
+
+.attribution {
+  font-size: 14px; 
+  text-align: center;
+  color: cyan;
+}
+
+.attribution a {
+  color: bisque;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-size: 15px;
+  font-family: "Overpass", sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--vdkblue);
+}
+
+article {
+  max-width: 400px;
+  border-radius: 16px;
+  background: radial-gradient(var(--dkblue) 100%, var(--ltgrey));
+  color: var(--white);
+  padding: 30px 16px;
+}
+
+.star {
+  border-radius: 999px;
+  background: var(--star);
+  height: 44px;
+  padding: 15px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+p {
+  opacity: 50%;
+}
+
+input {
+  font-size: 14px;
+  width: 100%;
+  text-align: center;
+  background: var(--star);
+  border: none;
+  border-radius: 8px;
+}
+
+input:focus {
+  outline: 1px solid orange;
+}
+
+.star-grade {
+  margin-top: -20px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: auto auto; /*optional*/
+  border: none;
+  gap: 5px;
+  padding: 0;
+}
+
+.star-1 {
+  display: flex;
+  justify-content: center;
+}
+
+.star-2 {
+  margin-top: -30px;
+  display: flex;
+  justify-content: center;
+}
+
+ label {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 8px;
+  display: inline-block;
+  background-color: var(--star);
+  color: var(--ltgrey);
+  padding: 10px;
+  border-radius: 999px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+}
+
+.star-grade label:hover {
+  color: var(--vdkblue);
+  background: var(--orange);
+  
+}
+
+.star-grade input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.star-grade input[type="radio"]:checked + label {
+  color: var(--vdkblue);
+  background: var(--white);
+  border: none;
+}
+
+.star-grade input[type="radio"]:focus + label {
+  border: none;
+}
+
+button {
+  font-family: 700;
+  width: 100%;
+  text-transform: uppercase;
+  border-radius: 40px;
+  letter-spacing: 2px;
+  background: var(--orange);
+  border: none;
+  cursor: pointer;
+  transition: 150ms ease-in-out;
+}
+
+button:hover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 90%;
+  margin-left: 20px;
+  font-size: 16px;
+  background: var(--white);
+}
+
+
+.thanks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.result {
+  background: var(--star);
+  color: var(--orange);
+  border-radius: 40px;
+  padding: 5px 20px;
+}
+
+span {
+  margin: -9px;
+}
+
+.hide {
+  display: none;
+}
+
+@media (min-width: 450px) {
+  fieldset {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .star-grade {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .star-1 {
+    display: flex;
+    justify-content: center;
+    margin-right: -24px;
+  }
+
+  .star-2 {
+    margin-top: 0;
+    display: flex;
+  }
+}
